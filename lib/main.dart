@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_loto_check/screens/home_screen.dart';
+import 'package:flutter_loto_check/screen/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
