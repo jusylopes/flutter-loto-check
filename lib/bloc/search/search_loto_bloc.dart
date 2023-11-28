@@ -7,8 +7,8 @@ import 'search_loto_blocs_exports.dart';
 part 'search_loto_event.dart';
 part 'search_loto_state.dart';
 
-class SearchCepBloc extends Bloc<SearchLotoEvent, SearchLotoState> {
-  SearchCepBloc({required this.repository})
+class SearchLotoBloc extends Bloc<SearchLotoEvent, SearchLotoState> {
+  SearchLotoBloc({required this.repository})
       : super(const SearchLotoState(status: BlocStatus.initial)) {
     on<GetLotteryResult>(_onGetLottery);
   }
