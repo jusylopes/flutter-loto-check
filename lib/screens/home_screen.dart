@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_loto_check/screen/saved_loto_screen.dart';
-import 'package:flutter_loto_check/screen/search_loto_screen.dart';
+import 'package:flutter_loto_check/screens/saved_loto_screen.dart';
+import 'package:flutter_loto_check/screens/search_loto_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final int initialIndex;

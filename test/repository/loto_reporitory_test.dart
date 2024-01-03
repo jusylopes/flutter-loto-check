@@ -24,15 +24,15 @@ void main() {
     });
 
     group('fetchLottery', () {
-      const int expectednumberLottery = 2657;
-      const String expectedDataApuracao = "18/11/2023";
+      const int expectednumberLottery = 2555;
+      const String expectedDataApuracao = "14/01/2023";
       const List<String> expectedListaDezenas = [
-        "07",
-        "27",
-        "32",
-        "33",
-        "36",
+        "03",
+        "20",
+        "45",
+        "52",
         "53",
+        "58"
       ];
 
       test('should return MegaSenaModel on success with correct data',
@@ -40,65 +40,48 @@ void main() {
         final loto =
             await repository.fetchLottery(numberLottery: expectednumberLottery);
 
-        expect(loto, isInstanceOf<MegaSenaModel>());
-        expect(loto.dataApuracao, expectedDataApuracao);
-        expect(loto.listaDezenas, expectedListaDezenas);
+        expect(loto, isInstanceOf<ModelMegaSena>());
+        expect(loto.dezenas, expectedDataApuracao);
+        expect(loto.dezenas, expectedListaDezenas);
       });
     });
   });
 }
 
 final jsonMock = {
-  "acumulado": true,
-  "dataApuracao": "18/11/2023",
-  "dataProximoConcurso": "21/11/2023",
-  "dezenasSorteadasOrdemSorteio": ["07", "53", "33", "36", "32", "27"],
-  "exibirDetalhamentoPorCidade": true,
-  "id": null,
-  "indicadorConcursoEspecial": 1,
-  "listaDezenas": ["07", "27", "32", "33", "36", "53"],
-  "listaDezenasSegundoSorteio": null,
-  "listaMunicipioUFGanhadores": [],
-  "listaRateioPremio": [
+  "loteria": "megasena",
+  "concurso": 2555,
+  "data": "14/01/2023",
+  "local": "ESPAÇO DA SORTE em SÃO PAULO, SP",
+  "dezenasOrdemSorteio": ["45", "58", "03", "20", "52", "53"],
+  "dezenas": ["03", "20", "45", "52", "53", "58"],
+  "trevos": [],
+  "timeCoracao": "",
+  "mesSorte": "",
+  "premiacoes": [
+    {"descricao": "6 acertos", "faixa": 1, "ganhadores": 0, "valorPremio": 0.0},
     {
-      "descricaoFaixa": "6 acertos",
-      "faixa": 1,
-      "numeroDeGanhadores": 0,
-      "valorPremio": 0.0
-    },
-    {
-      "descricaoFaixa": "5 acertos",
+      "descricao": "5 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 76,
-      "valorPremio": 62551.38
+      "ganhadores": 58,
+      "valorPremio": 65428.68
     },
     {
-      "descricaoFaixa": "4 acertos",
+      "descricao": "4 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 7214,
-      "valorPremio": 941.4
+      "ganhadores": 4595,
+      "valorPremio": 1179.81
     }
   ],
-  "listaResultadoEquipeEsportiva": null,
-  "localSorteio": "ESPAÇO DA SORTE",
-  "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
-  "nomeTimeCoracaoMesSorte":
-      "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 2657,
-  "numeroConcursoAnterior": 2656,
-  "numeroConcursoFinal_0_5": 2660,
-  "numeroConcursoProximo": 2658,
-  "numeroJogo": 2,
+  "estadosPremiados": [],
   "observacao": "",
-  "premiacaoContingencia": null,
-  "tipoJogo": "MEGA_SENA",
-  "tipoPublicacao": 3,
-  "ultimoConcurso": true,
-  "valorArrecadado": 82453625.0,
-  "valorAcumuladoConcurso_0_5": 12689034.66,
-  "valorAcumuladoConcursoEspecial": 101765908.19,
-  "valorAcumuladoProximoConcurso": 44352302.43,
-  "valorEstimadoProximoConcurso": 51000000.0,
-  "valorSaldoReservaGarantidora": 0.0,
-  "valorTotalPremioFaixaUm": 0.0
+  "acumulou": true,
+  "proximoConcurso": 2556,
+  "dataProximoConcurso": "18/01/2023",
+  "localGanhadores": [],
+  "valorArrecadado": 6.5819628E7,
+  "valorAcumuladoConcurso_0_5": 4394052.55,
+  "valorAcumuladoConcursoEspecial": 3343555.24,
+  "valorAcumuladoProximoConcurso": 3.372247608E7,
+  "valorEstimadoProximoConcurso": 4.2E7
 };

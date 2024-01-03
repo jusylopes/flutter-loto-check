@@ -1,11 +1,11 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_loto_check/blocs/register/register_blocs_exports.dart';
+import 'package:flutter_loto_check/blocs/search/search_loto_blocs_exports.dart';
 import 'package:flutter_loto_check/repository/loto_reporitory.dart';
-import 'package:flutter_loto_check/screen/home_screen.dart';
-
-import 'bloc/register/register_blocs_exports.dart';
-import 'bloc/search/search_loto_blocs_exports.dart';
+import 'package:flutter_loto_check/screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
